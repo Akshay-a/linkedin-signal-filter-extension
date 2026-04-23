@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Signal Filter",
+  "description": "Highlights technical/demo posts and filters low-signal story-style LinkedIn content.",
+  "version": "0.1.0",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["src/settings.js", "src/classifier.js", "src/contentScript.js"],
+      "css": ["styles/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "LinkedIn Signal Filter",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}
