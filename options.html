@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn Signal Filter - Options</title>
+    <link rel="stylesheet" href="styles/options.css" />
+  </head>
+  <body>
+    <main class="options">
+      <h1>LinkedIn Signal Filter: Options</h1>
+      <p>
+        Goal: keep demo-driven, technical, and article-depth posts visible while filtering story-only or
+        engagement-bait content.
+      </p>
+
+      <section>
+        <h2>Filter Mode</h2>
+        <select id="mode">
+          <option value="hide-low-signal">Hide low-signal posts</option>
+          <option value="dim-low-signal">Dim low-signal posts</option>
+          <option value="mark-only">Mark only (no filtering)</option>
+        </select>
+      </section>
+
+      <section>
+        <h2>Strictness</h2>
+        <p>Higher strictness requires stronger technical signals.</p>
+        <input id="strictness" type="range" min="0" max="100" step="1" />
+        <div class="strictness-value">Current strictness: <strong id="strictnessValue"></strong></div>
+      </section>
+
+      <section class="checks">
+        <label><input id="highlightHighSignal" type="checkbox" /> Highlight high-signal posts</label>
+        <label><input id="hideMixedPosts" type="checkbox" /> Treat mixed posts as low-signal</label>
+        <label><input id="showReasonBadges" type="checkbox" /> Show reason badges in feed</label>
+      </section>
+
+      <div class="actions">
+        <button id="save" type="button">Save settings</button>
+        <button id="reset" type="button" class="secondary">Reset defaults</button>
+      </div>
+
+      <p id="status" class="status" aria-live="polite"></p>
+
+      <section>
+        <h2>How the classifier works</h2>
+        <ul>
+          <li>Promotes posts with demos, metrics, implementation details, repos, and technical language.</li>
+          <li>Penalizes posts that rely on journey framing, emotional bait, and engagement hooks.</li>
+          <li>The model is heuristic-based and should be tuned over time.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="src/settings.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

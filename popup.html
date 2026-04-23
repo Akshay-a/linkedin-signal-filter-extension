@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn Signal Filter</title>
+    <link rel="stylesheet" href="styles/popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <h1>LinkedIn Signal Filter</h1>
+
+      <label class="field">
+        <span>Filtering mode</span>
+        <select id="mode">
+          <option value="hide-low-signal">Hide low-signal posts</option>
+          <option value="dim-low-signal">Dim low-signal posts</option>
+          <option value="mark-only">Mark only (no filtering)</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Strictness: <strong id="strictnessValue">60</strong></span>
+        <input id="strictness" type="range" min="0" max="100" step="1" />
+      </label>
+
+      <label class="checkbox">
+        <input id="highlightHighSignal" type="checkbox" />
+        <span>Highlight high-signal posts</span>
+      </label>
+
+      <label class="checkbox">
+        <input id="hideMixedPosts" type="checkbox" />
+        <span>Treat mixed posts as low-signal</span>
+      </label>
+
+      <label class="checkbox">
+        <input id="showReasonBadges" type="checkbox" />
+        <span>Show reason badges on posts</span>
+      </label>
+
+      <div class="actions">
+        <button id="rescan" type="button">Re-scan feed</button>
+        <button id="openOptions" type="button" class="secondary">Advanced settings</button>
+      </div>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script src="src/settings.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

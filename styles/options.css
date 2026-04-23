@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  background: #f7fafc;
+  color: #1a202c;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.options {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+section {
+  display: grid;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.checks {
+  gap: 8px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+select,
+input[type="range"] {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  background: #0a66c2;
+  color: #fff;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #e2e8f0;
+  color: #1a202c;
+}
+
+.status {
+  margin: 0;
+  min-height: 20px;
+  color: #2d3748;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+}
